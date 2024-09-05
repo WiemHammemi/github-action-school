@@ -1,7 +1,12 @@
 name: CI/CD Pipeline 2
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+   inputs:
+      skip_push:
+        type: boolean
+        description: "Check this box to skip pushing to Dockerhub"
+        default: false
 
 jobs:
   lint-and-test:
